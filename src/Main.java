@@ -27,12 +27,19 @@ public class Main {
         catalogo.add(new Product("boh4", "boys", 200.99));
 
 
-        //esercizio 1
-
+        System.out.println("*******************esercizio1***********************");
         Predicate<Product> isABook = Product -> Objects.equals(Product.getCategory(), "book");
         Predicate<Product> moreThanHundred = Product -> Product.getPrice() > 100;
-
         catalogo.stream().filter(isABook.and(moreThanHundred)).forEach(product -> System.out.println(product.toString()));
+
+
+        System.out.println("*******************esercizio2***********************");
+
+        Predicate<Product> isForChildren = Product -> Objects.equals(Product.getCategory(), "baby");
+
+        for (Product product : catalogo) {
+            if (isForChildren.test(product)) System.out.println(product);
+        }
 
 
     }
