@@ -41,6 +41,15 @@ public class Main {
             if (isForChildren.test(product)) System.out.println(product);
         }
 
+        System.out.println("*******************esercizio3***********************");
+
+        Predicate<Product> forBoys = Product -> Objects.equals(Product.getCategory(), "boys");
+
+        catalogo.stream().filter(forBoys).forEach(Product -> {
+            System.out.println("0% off : " + Product);
+            Product.setPrice((Product.getPrice() / 100) * 90);
+            System.out.println("10% off : " + Product);
+        });
 
     }
 
