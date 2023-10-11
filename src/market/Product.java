@@ -9,8 +9,8 @@ public class Product {
     private String category;
     private Double price;
 
-
-    public Product(String name, String category, Double price) {
+    //costruttore
+    public Product(String name, String category, double price) {
         this.id = rnd.nextLong(100, 199);
         this.name = name;
         this.category = category;
@@ -18,6 +18,15 @@ public class Product {
     }
 
     //getters and setters
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+
     public long getId() {
         return id;
     }
@@ -38,11 +47,15 @@ public class Product {
         this.category = category;
     }
 
-    public Double getPrice() {
-        return price;
-    }
+    //to string
 
-    public void setPrice(Double price) {
-        this.price = price;
+
+    @Override
+    public String toString() {
+        return "Product{id=" + id +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
