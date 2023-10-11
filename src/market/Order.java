@@ -2,22 +2,28 @@ package market;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 
 public class Order {
+    Random rnd = new Random();
     private long id;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> product;
     private Customer customer;
 
+    public Order(LocalDate orderDate, LocalDate deliveryDate, List<Product> product, Customer customer) {
+        this.id = rnd.nextLong(0, 99);
+        this.orderDate = orderDate;
+        this.deliveryDate = deliveryDate;
+        this.product = product;
+        this.customer = customer;
+    }
+
     //getters and setters
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public LocalDate getOrderDate() {
