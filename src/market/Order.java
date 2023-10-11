@@ -57,4 +57,22 @@ public class Order {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    public int getCustTier(Customer customer) {
+        return customer.getTier();
+    }
+
+
+    //to string
+
+
+    @Override
+    public String toString() {
+        return "Order{id=" + id +
+                ", orderDate=" + orderDate +
+                ", deliveryDate=" + deliveryDate +
+                ", product=" + product +
+                ", customer=" + customer +
+                '}';
+    }
 }
